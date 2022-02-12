@@ -14,8 +14,7 @@
     transform: translate(-50%,-50%);
     font-size: 37px;
 	text-align: center;
-	background-image: url("/html/bg.png");
-	background-size: cover;
+	background-color: #9ef20c;
 	border-radius: 25px;
 	border: 3px solid black;
 }
