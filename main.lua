@@ -8,19 +8,19 @@ end)
 
 Citizen.CreateThread(function() 	
     while true do 		
-        Citizen.Wait(0) 		
-        if IsControlPressed(1, 243) then 		
+      Citizen.Wait(0) 		
+        if IsControlPressed (1, 344) then 		
           TriggerEvent("nui:toggle", true)
         end 	
     end
 end)
 
 RegisterNetEvent('nui:toggle')
- AddEventHandler('nui:toggle', function()
-   SendNUIMessage({
-     type = "ui",
-     display = true
-   })
+  AddEventHandler('nui:toggle', function()
+    SendNUIMessage({
+      type = "ui",
+      display = false
+    })
 end)
 
 -- RegisterCommand("avbusy", function()
