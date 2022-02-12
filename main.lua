@@ -1,15 +1,26 @@
 local display = false
 
-RegisterCommand("showstatus", function()
+RegisterCommand("status", function()
     Citizen.CreateThread(function()
-      TriggerEvent('nui:on', true)
+      TriggerEvent('nui:toggle', true)
     end)
 end)
 
-RegisterCommand("hidestatus", function()
-   Citizen.CreateThread(function()
-     TriggerEvent("nui:off", true)
-    end)
+Citizen.CreateThread(function() 	
+    while true do 		
+        Citizen.Wait(0) 		
+        if IsControlPressed(1, 243) then 		
+          TriggerEvent("nui:toggle", true)
+        end 	
+    end
+end)
+
+RegisterNetEvent('nui:toggle')
+ AddEventHandler('nui:toggle', function()
+   SendNUIMessage({
+     type = "ui",
+     display = true
+   })
 end)
 
 -- RegisterCommand("avbusy", function()
@@ -35,22 +46,6 @@ end)
 --       TriggerEvent('av:off', true)
 --     end)
 -- end)
-
-RegisterNetEvent('nui:on')
- AddEventHandler('nui:on', function()
-   SendNUIMessage({
-     type = "ui",
-     display = true
-    })
-end)
-
-RegisterNetEvent('nui:off')
- AddEventHandler('nui:off', function()
-   SendNUIMessage({
-     type = "ui",
-     display = false
-   })
-end)
 
 -- RegisterNetEvent('av:on')
 --  AddEventHandler('av:on', function()
