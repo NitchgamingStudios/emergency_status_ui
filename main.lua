@@ -6,14 +6,14 @@ RegisterCommand("status", function()
     end)
 end)
 
-Citizen.CreateThread(function() 	
-    while true do 		
-      Citizen.Wait(0) 		
-        if IsControlPressed (1, 344) then 		
-          TriggerEvent("nui:toggle", true)
-        end 	
-    end
-end)
+-- Citizen.CreateThread(function() 	
+--     while true do 		
+--       Citizen.Wait(0) 		
+--         if IsControlPressed (1, 344) then 		
+--           TriggerEvent("nui:toggle", true)
+--         end 	
+--     end
+-- end)
 
 RegisterNetEvent('nui:toggle')
   AddEventHandler('nui:toggle', function()
@@ -23,29 +23,29 @@ RegisterNetEvent('nui:toggle')
     })
 end)
 
--- RegisterCommand("avbusy", function()
---     Citizen.CreateThread(function()
---       TriggerEvent('av:on', true)
---     end)
--- end)
+RegisterCommand("avbusy", function()
+    Citizen.CreateThread(function()
+      TriggerEvent('av:on', true)
+    end)
+end)
 
--- RegisterCommand("avclear", function()
---   Citizen.CreateThread(function()
---       TriggerEvent('cfa:off', true)
---     end)
--- end)
+RegisterCommand("avclear", function()
+  Citizen.CreateThread(function()
+      TriggerEvent('cfa:off', true)
+    end)
+end)
 
--- RegisterCommand("cfabusy", function()
---   Citizen.CreateThread(function()
---       TriggerEvent('cfa:off', true)
---     end)
--- end)
+RegisterCommand("cfabusy", function()
+  Citizen.CreateThread(function()
+      TriggerEvent('cfa:off', true)
+    end)
+end)
 
--- RegisterCommand("cfaclear", function()
---   Citizen.CreateThread(function()
---       TriggerEvent('av:off', true)
---     end)
--- end)
+RegisterCommand("cfaclear", function()
+  Citizen.CreateThread(function()
+      TriggerEvent('av:off', true)
+    end)
+end)
 
 -- RegisterNetEvent('av:on')
 --  AddEventHandler('av:on', function()

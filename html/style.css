@@ -6,9 +6,8 @@
     transform: translate(-50%,-50%);
     font-size: 35px;
 	text-align: center;
-	background-color: #0c3880;
+	background-color: #242424;
 	border-radius: 25px;
-	border: 3px solid black;
 	color: white;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
