@@ -6,15 +6,6 @@ RegisterCommand("status", function()
     end)
 end)
 
--- Citizen.CreateThread(function() 	
---     while true do 		
---       Citizen.Wait(0) 		
---         if IsControlPressed (1, 344) then 		
---           TriggerEvent("nui:toggle", true)
---         end 	
---     end
--- end)
-
 RegisterNetEvent('nui:toggle')
   AddEventHandler('nui:toggle', function()
     SendNUIMessage({
@@ -24,57 +15,43 @@ RegisterNetEvent('nui:toggle')
 end)
 
 RegisterCommand("avbusy", function()
-    Citizen.CreateThread(function()
-      TriggerEvent('av:on', true)
-    end)
+  Citizen.CreateThread(function()
+    TriggerEvent('avoff', true)
+  end)
 end)
 
 RegisterCommand("avclear", function()
   Citizen.CreateThread(function()
-      TriggerEvent('cfa:off', true)
-    end)
+    TriggerEvent('avon', true)
+  end)
 end)
 
 RegisterCommand("cfabusy", function()
   Citizen.CreateThread(function()
-      TriggerEvent('cfa:off', true)
-    end)
+    TriggerEvent('cfaoff', true)
+  end)
 end)
 
 RegisterCommand("cfaclear", function()
   Citizen.CreateThread(function()
-      TriggerEvent('av:off', true)
-    end)
+    TriggerEvent('cfaon', true)
+  end)
 end)
 
--- RegisterNetEvent('av:on')
---  AddEventHandler('av:on', function()
---    SendNUIMessage({
---      type = "",
---       = 
---    })
--- end)
+-- Citizen.CreateThread(function()
+--   while true do
+--     Citizen.Wait(0)
+--     if )
 
--- RegisterNetEvent('av:off')
---  AddEventHandler('av:off', function()
---    SendNUIMessage({
---      type = "",
---       = 
---    })
--- end)
-
--- RegisterNetEvent('cfa:on')
---  AddEventHandler('cfa:on', function()
---    SendNUIMessage({
---      type = "",
---       = 
---    })
--- end)
-
--- RegisterNetEvent('cfa:off')
---  AddEventHandler('cfa:off', function()
---    SendNUIMessage({
---      type = "",
---       = 
---    })
--- end)
+function DrawText2(text)
+  SetTextFont(0)
+  SetTextProportional(1)
+  SetTextScale(0.0, 0.45)
+  SetTextDropshadow(1, 0, 0, 0, 255)
+  SetTextEdge(1, 0, 0, 0, 255)
+  SetTextDropShadow()
+  SetTextOutline()
+  SetTextEntry("STRING")
+  AddTextComponentString(text)
+  DrawText(0.40, 0.10)
+end
